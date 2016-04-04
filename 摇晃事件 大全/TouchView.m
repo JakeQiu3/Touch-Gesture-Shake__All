@@ -13,7 +13,7 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        UIImage *image = [UIImage imageNamed:@"1-首页.jpg"];
+        UIImage *image = [UIImage imageNamed:@"banner0"];
         self.backgroundColor = [UIColor colorWithPatternImage:image];
     }
     return self;

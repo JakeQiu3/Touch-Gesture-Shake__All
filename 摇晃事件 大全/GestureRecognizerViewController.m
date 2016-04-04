@@ -41,33 +41,33 @@
 }
 
 - (void)addGesture {
-    /*添加点按手势*/
+/*添加点击手势*/
     UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGesture:)];
     [_imageView addGestureRecognizer:tapGestureRecognizer];
     
-     /*添加长按手势*/
+/*添加长按手势*/
     UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)];
     [_imageView addGestureRecognizer:longPress];
     
-    /*添加捏合手势*/
+/*添加捏合手势*/
     UIPinchGestureRecognizer *pinchGesture=[[UIPinchGestureRecognizer alloc]initWithTarget:self action:@selector(pinchImage:)];
     [_imageView addGestureRecognizer:pinchGesture];
     
-    /*添加旋转手势*/
+/*添加旋转手势*/
     UIRotationGestureRecognizer *rotationGesture=[[UIRotationGestureRecognizer alloc]initWithTarget:self action:@selector(rotateImage:)];
     [_imageView addGestureRecognizer:rotationGesture];
     
-    /*添加拖动手势*/
+/*添加拖动手势*/
     UIPanGestureRecognizer *panGesture=[[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panImage:)];
     [_imageView addGestureRecognizer:panGesture];
     
-    /*添加轻扫手势*/
+/*添加轻扫手势：向右侧*/
     //注意一个轻扫手势只能控制一个方向，默认向右，通过direction进行方向控制
     UISwipeGestureRecognizer *swipeGestureToRight=[[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(swipeImage:)];
     //swipeGestureToRight.direction=UISwipeGestureRecognizerDirectionRight;//默认为向右轻扫
     [_imageView addGestureRecognizer:swipeGestureToRight];
     
-    /*添加轻扫手势*/
+/*添加轻扫手势：向左侧*/
     
     UISwipeGestureRecognizer *swipeGestureToLeft=[[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(swipeImage:)];
     swipeGestureToLeft.direction=UISwipeGestureRecognizerDirectionLeft;
@@ -95,6 +95,7 @@
         
     }
 }
+
 //捏合时缩放图片
 - (void)pinchImage:(UIPinchGestureRecognizer *)pinch {
     
@@ -162,19 +163,5 @@
     
     
 }
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

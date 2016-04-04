@@ -23,11 +23,13 @@
     
     // Do any additional setup after loading the view.
 }
+
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    NSLog(@"接触view触发");
+    NSLog(@"接触self.view触发");
 }
 
 - (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    NSLog(@"移动self.view触发");
     UITouch *touch = [touches anyObject];
 //    获取当前精确的位置
     CGPoint current = [touch preciseLocationInView:self.view];
@@ -37,17 +39,19 @@
     CGPoint offset = CGPointMake(current.x - previous.x, current.y - previous.y);
  //   获取图片的中心点
     CGPoint center = _view.center;
-    _view.center = CGPointMake(center.x +offset.x, center.y+offset.y);
+    center = CGPointMake(center.x+offset.x, center.y+offset.y);
+    _view.center = center;
     NSLog(@"正在移动");
 }
 
 - (void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    
+    NSLog(@"取消接触self.view触发");
 }
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    NSLog(@"end移动");
+    NSLog(@"接触结束时end触发");
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

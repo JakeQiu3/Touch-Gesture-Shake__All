@@ -1,9 +1,9 @@
 //
 //  ViewController.h
-//  摇晃事件 大全
+//  Model
 //
-//  Created by 邱少依 on 15/12/29.
-//  Copyright © 2015年 QSY. All rights reserved.
+//  Created by qsyMac on 16/1/22.
+//  Copyright © 2016年 QSY. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

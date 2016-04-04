@@ -27,6 +27,7 @@
 - (BOOL)canBecomeFirstResponder {
     return YES;
 }
+
 - (UIImage *)getImage {
     int index = arc4random()%kImageCount;
     NSString *imageString = [NSString stringWithFormat:@"banner%i",index];
@@ -38,4 +39,5 @@
 - (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
     NSLog(@"结束运动");
 }
+
 @end

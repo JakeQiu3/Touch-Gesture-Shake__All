@@ -21,7 +21,12 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     NSString *filePath = [[NSBundle mainBundle]pathForResource:@"曲婉婷 - 我的歌声里" ofType:@"mp3"];
-    _player = [[AVPlayer alloc]initWithURL:[NSURL fileURLWithPath:filePath]];
+    NSURL *fileUrl = [NSURL fileURLWithPath:filePath];
+    _player = [[AVPlayer alloc]initWithURL:fileUrl];
+
+// 对比容器类的方式
+//    NSArray * p= [NSArray arrayWithContentsOfFile:<#(nonnull NSString *)#>];
+//    NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:<#(nonnull NSString *)#>];
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -47,16 +52,18 @@
 //   添加播放按钮
     _playBtn = [[UIButton alloc]initWithFrame:CGRectMake(140, 15, 50, 50)];
     _playBtn.backgroundColor = [UIColor redColor];
+    [_playBtn setTitle:@"播放或暂停" forState:UIControlStateNormal];
+    [_playBtn setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
     [self changeUIState];
     [_playBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
     [viewV addSubview:_playBtn];
 }
 //界面状态改变
 - (void)changeUIState {
-    if (_isPlaying) {// 播放时显示暂停图标
+    if (!_isPlaying) {// 播放时显示暂停图标
         [_playBtn setImage:[UIImage imageNamed:@"playing_btn_pause_n.png"] forState:UIControlStateNormal];
          [_playBtn setImage:[UIImage imageNamed:@"playing_btn_pause_h.png"] forState:UIControlStateHighlighted];
-    } else {// 显示播放状态图标
+    } else {// 显示播放状态图标:默认状态时
         [_playBtn setImage:[UIImage imageNamed:@"playing_btn_play_n.png"] forState:UIControlStateNormal];
         [_playBtn setImage:[UIImage imageNamed:@"playing_btn_play_h.png"] forState:UIControlStateHighlighted];
     }
@@ -68,7 +75,8 @@
     } else {
          [_player play];
     }
-    _isPlaying = !_isPlaying;//将相反的状态给自己
+    //将相反的状态给自己
+    _isPlaying = !_isPlaying;
     [self changeUIState];
 }
 - (void)didReceiveMemoryWarning {
@@ -78,7 +86,7 @@
 
 //远程控制事件
 - (void)remoteControlReceivedWithEvent:(UIEvent *)event {
-    NSLog(@"%i,%i",event.type,event.subtype);
+    NSLog(@"%li,%li",(long)event.type,(long)event.subtype);
     if (event.type == UIEventTypeRemoteControl) {
         switch (event.subtype) {
             case UIEventSubtypeRemoteControlPlay:

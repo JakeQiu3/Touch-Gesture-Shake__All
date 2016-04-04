@@ -7,10 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "TouchEventViewController.h"
-#import "GestureRecognizerViewController.h"
-#import "ShakeViewController.h"
-#import "RemoteControlViewController.h"
+#import "ViewController.h"
 #import <AVFoundation/AVFoundation.h>
 @interface AppDelegate ()
 
@@ -22,20 +19,13 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
-////    测试1：触摸
-//    TouchEventViewController *mainVC = [[TouchEventViewController alloc] init];
-//    测试2：手势
-//    GestureRecognizerViewController *mainVC = [[GestureRecognizerViewController alloc] init];
-//    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:mainVC];
-////    测试3：摇动
-//    ShakeViewController *mainVC = [[ShakeViewController alloc] init];
-//    测试4：远程控制
     [[UINavigationBar appearance]setBarTintColor:[UIColor colorWithRed:23/255.0 green:180/255.0 blue:237/255.0 alpha:1]];
     [[UINavigationBar appearance]setTintColor:[UIColor redColor]];
-    RemoteControlViewController *mainVC = [[RemoteControlViewController alloc] init];
+    ViewController *mainVC = [[ViewController alloc]init];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:mainVC];
     self.window.rootViewController = nav;
 
+#pragma 少 设置播放
     //设置播放会话，在后台可以继续播放（还需要设置程序允许后台运行模式）
     [[AVAudioSession sharedInstance]setCategory:AVAudioSessionCategoryPlayback error:nil];
     if(![[AVAudioSession sharedInstance] setActive:YES error:nil])
@@ -46,8 +36,6 @@
     [[UIApplication sharedApplication]beginReceivingRemoteControlEvents];
     
     [self.window makeKeyAndVisible];
-
-    // Override point for customization after application launch.
     return YES;
 }
 

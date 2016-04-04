@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3033C98F1CB22829005D1B05 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3033C98E1CB22829005D1B05 /* ViewController.m */; };
 		7316AFAC1C3237C000D4A117 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7316AFAB1C3237C000D4A117 /* main.m */; };
 		7316AFAF1C3237C100D4A117 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7316AFAE1C3237C100D4A117 /* AppDelegate.m */; };
-		7316AFB21C3237C100D4A117 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7316AFB11C3237C100D4A117 /* ViewController.m */; };
 		7316AFB51C3237C100D4A117 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7316AFB31C3237C100D4A117 /* Main.storyboard */; };
 		7316AFB71C3237C100D4A117 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7316AFB61C3237C100D4A117 /* Assets.xcassets */; };
 		7316AFBA1C3237C100D4A117 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7316AFB81C3237C100D4A117 /* LaunchScreen.storyboard */; };
@@ -26,12 +26,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3033C98D1CB22829005D1B05 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		3033C98E1CB22829005D1B05 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		7316AFA71C3237C000D4A117 /* 摇晃事件 大全.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "摇晃事件 大全.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7316AFAB1C3237C000D4A117 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7316AFAD1C3237C100D4A117 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7316AFAE1C3237C100D4A117 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		7316AFB01C3237C100D4A117 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		7316AFB11C3237C100D4A117 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		7316AFB41C3237C100D4A117 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7316AFB61C3237C100D4A117 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7316AFB91C3237C100D4A117 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -86,16 +86,12 @@
 			children = (
 				7316AFAD1C3237C100D4A117 /* AppDelegate.h */,
 				7316AFAE1C3237C100D4A117 /* AppDelegate.m */,
-				7316AFC11C3238E000D4A117 /* 触摸事件 */,
+				3033C98D1CB22829005D1B05 /* ViewController.h */,
+				3033C98E1CB22829005D1B05 /* ViewController.m */,
+				7316AFC11C3238E000D4A117 /* 触摸和移动事件 */,
 				7316AFC21C3238ED00D4A117 /* 手势事件 */,
 				7316AFD41C327FA200D4A117 /* 摇动事件 */,
 				7316AFDB1C328A8F00D4A117 /* 远程控制事件 */,
-				7316AFB01C3237C100D4A117 /* ViewController.h */,
-				7316AFB11C3237C100D4A117 /* ViewController.m */,
-				7316AFB31C3237C100D4A117 /* Main.storyboard */,
-				7316AFB61C3237C100D4A117 /* Assets.xcassets */,
-				7316AFB81C3237C100D4A117 /* LaunchScreen.storyboard */,
-				7316AFBB1C3237C100D4A117 /* Info.plist */,
 				7316AFAA1C3237C000D4A117 /* Supporting Files */,
 			);
 			path = "摇晃事件 大全";
@@ -104,12 +100,16 @@
 		7316AFAA1C3237C000D4A117 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7316AFBB1C3237C100D4A117 /* Info.plist */,
+				7316AFB81C3237C100D4A117 /* LaunchScreen.storyboard */,
+				7316AFB61C3237C100D4A117 /* Assets.xcassets */,
+				7316AFB31C3237C100D4A117 /* Main.storyboard */,
 				7316AFAB1C3237C000D4A117 /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		7316AFC11C3238E000D4A117 /* 触摸事件 */ = {
+		7316AFC11C3238E000D4A117 /* 触摸和移动事件 */ = {
 			isa = PBXGroup;
 			children = (
 				7316AFC31C32392700D4A117 /* TouchEventViewController.h */,
@@ -117,7 +117,7 @@
 				7316AFC61C32396600D4A117 /* TouchView.h */,
 				7316AFC71C32396600D4A117 /* TouchView.m */,
 			);
-			name = "触摸事件";
+			name = "触摸和移动事件";
 			sourceTree = "<group>";
 		};
 		7316AFC21C3238ED00D4A117 /* 手势事件 */ = {
@@ -227,9 +227,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3033C98F1CB22829005D1B05 /* ViewController.m in Sources */,
 				7316AFCD1C32560200D4A117 /* GestureRecognizerViewController.m in Sources */,
 				7316AFC81C32396600D4A117 /* TouchView.m in Sources */,
-				7316AFB21C3237C100D4A117 /* ViewController.m in Sources */,
 				7316AFC51C32392700D4A117 /* TouchEventViewController.m in Sources */,
 				7316AFD71C327FBA00D4A117 /* ShakeViewController.m in Sources */,
 				7316AFDA1C32803D00D4A117 /* ShakeImageView.m in Sources */,
